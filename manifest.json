@@ -1,0 +1,27 @@
+{
+  "manifest_version": 2,
+  "name": "MediaKeys for Yandex.Music",
+  "version": "1.0",
+  "description": "Добавляет поддержку мультмедийных клавиш для сервисов Яндекс.Музыка и Яндекс.Радио.",
+  "permissions": [
+    "tabs",
+    "https://music.yandex.ru/*",
+    "https://radio.yandex.ru/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://music.yandex.ru/*",
+        "https://radio.yandex.ru/*"
+      ],
+      "js": [
+        "inject.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "minimum_chrome_version": "73",
+  "web_accessible_resources": [
+    "mediaSession.js"
+  ]
+}
